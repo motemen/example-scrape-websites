@@ -1,0 +1,21 @@
+= Scraping with WebdriverIO
+
+Scrape websites using http://webdriver.io/[WebdriverIO].
+
+Requires https://code.google.com/p/chromedriver/[ChromeDriver] to be installed.
+
+	npm install
+	npm run scrape-mufg
+
+== MUFG
+
+Scrapes http://direct.bk.mufg.jp/[三菱東京UFJ銀行] and prints current balance and stores last month's details to __YYYY__-__mm__.tsv.
+
+Required environment variables:
+
+* `MUFG_ID`
+* `MUFG_PASSWORD`
+
+== Known issues
+
+* MUFG: cannot proceed when the site forces user to read notifications

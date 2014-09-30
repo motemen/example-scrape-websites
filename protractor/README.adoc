@@ -1,0 +1,15 @@
+= Scraping with Protractor
+
+Scrape websites using http://angular.github.io/protractor/[Protoractor].
+
+	npm install
+	npm run scrape-mufg
+
+== MUFG
+
+Scrapes http://direct.bk.mufg.jp/[三菱東京UFJ銀行] and prints current balance and stores last month's details to __YYYY__-__mm__.tsv.
+
+Required environment variables:
+
+* `MUFG_ID`
+* `MUFG_PASSWORD`

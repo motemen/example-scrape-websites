@@ -1,0 +1,16 @@
+{
+  "name": "protractor-scrape-money",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "$(npm bin)/webdriver-manager update",
+    "scrape-mufg": "$(npm bin)/protractor --specs mufg.js"
+  },
+  "author": "motemen <motemen@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "protractor": "^1.3.0"
+  }
+}
