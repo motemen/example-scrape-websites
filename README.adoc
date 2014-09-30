@@ -1,8 +1,8 @@
 = example-scrape-websites
 
-Examples scripts using http://angular.github.io/protractor/[Protoractor] and http://webdriver.io/[WebdriverIO] to scrape websites.
+Examples scripts using http://angular.github.io/protractor/[Protractor] and http://webdriver.io/[WebdriverIO] to scrape websites.
 
 For details, look into the corresponding directories.
 
-* link:/protoractor/[Protoractor]
+* link:/protractor/[Protractor]
 * link:/webdriverio/[WebdriverIO]
