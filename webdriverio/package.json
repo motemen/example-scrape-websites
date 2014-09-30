@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "which chromedriver >/dev/null 2>&1 || echo '*** ChromeDriver required to be installed ***'",
     "scrape-mufg": "node runner.js mufg.js"
   },
   "author": "motemen <motemen@gmail.com>",
