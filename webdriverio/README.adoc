@@ -2,8 +2,6 @@
 
 Scrape websites using http://webdriver.io/[WebdriverIO].
 
-Requires https://code.google.com/p/chromedriver/[ChromeDriver] to be installed.
-
 	npm install
 	npm run scrape-mufg
 
