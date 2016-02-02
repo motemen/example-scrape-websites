@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "$(npm bin)/webdriver-manager update",
-    "scrape-mufg": "$(npm bin)/protractor --specs mufg.js"
+    "scrape-mufg": "$(npm bin)/protractor --specs mufg.js",
+    "scrape-smbc": "tsc smbc.ts && $(npm bin)/protractor --specs smbc.js"
   },
   "author": "motemen <motemen@gmail.com>",
   "license": "MIT",
