@@ -2,7 +2,13 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {
-      'excludeSwitches': ['ignore-certificate-errors']
+      'excludeSwitches': ['ignore-certificate-errors'],
+      prefs: {
+        download: {
+          prompt_for_download: false,
+          default_directory: process.cwd() + '/downloads'
+        },
+      }
     }
   },
 
@@ -28,6 +34,14 @@ exports.config = {
     mufg: {
       id: process.env.MUFG_ID,
       password: process.env.MUFG_PASSWORD
+    },
+    smbc: {
+      account: process.env.SMBC_ACCOUNT,
+      password: process.env.SMBC_PASSWORD
+    },
+    amazon: {
+      email: process.env.AMAZON_EMAIL,
+      password: process.env.AMAZON_PASSWORD
     }
   }
 };

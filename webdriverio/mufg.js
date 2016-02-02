@@ -30,6 +30,24 @@ client
   .addValue('[name="PASSWORD"]',   process.env.MUFG_PASSWORD)
   .click('[alt="ログイン"]')
 
+  .on('readNotifications', function () {
+    client.url(function (err, res) {
+      if (/InformationIchiranShoukaiMidoku\.do/.exec(res.value)) {
+        client
+          .waitFor('//table[@class="data"]/tbody[1]/tr', WAIT)
+          .element('//table[@class="data"]/tbody[1]/tr', function (err, tr) {
+            client.elementIdText(tr.ELEMENT, function (err, text) {
+              console.log(text);
+            });
+            // click
+            client.click('[alt="トップページへ"]')
+              .emit('readNotifications')
+          })
+      }
+    })
+  })
+  .emit('readNotifications')
+
   .waitFor('#setAmountDisplay', WAIT)
   .getText('#setAmountDisplay', function (err, res) {
     console.log('残高: ' + res);
