@@ -35,6 +35,19 @@ exports.config = {
       id: process.env.MUFG_ID,
       password: process.env.MUFG_PASSWORD
     },
+    rakuten: {
+      id: process.env.RAKUTEN_ID,
+      password: process.env.RAKUTEN_PASSWORD,
+      questions: [
+        [/出身地は？/, '(答え)'],
+        [/初めて飼ったペットの名前は？/, '(答え)'],
+        [/所有している車は？/, '(答え)']
+      ]
+    },
+    gmail: {
+      id: process.env.GMAIL_ID,
+      password: process.env.GMAIL_PASSWORD
+    },
     smbc: {
       account: process.env.SMBC_ACCOUNT,
       password: process.env.SMBC_PASSWORD

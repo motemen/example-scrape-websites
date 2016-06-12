@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "webdriver-manager update",
     "scrape-mufg": "protractor --specs mufg.js",
+    "scrape-rakuten": "protractor --specs rakuten.js",
     "scrape-smbc": "tsc smbc.ts && protractor --specs smbc.js",
     "scrape-amazon-affiliate": "protractor --specs amazon-affiliate.js"
   },
@@ -13,6 +14,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "iconv": "^2.2.0",
+    "inbox": "^1.1.59",
     "protractor": "^1.3.0"
   }
 }
