@@ -18,7 +18,7 @@ describe('rakuten', function () {
   browser.ignoreSynchronization = true;
   browser.driver.get('https://fes.rakuten-bank.co.jp/MS/main/RbS?CurrentPageID=START&&COMMAND=LOGIN');
 
-  it('Gmailにログインしてワンタイムキー通知メールを取得できるようイベント監視', function () {
+  it('IMAPサーバにログインしてワンタイムキー通知メールを取得できるようイベント監視', function () {
     // http://ayapi.github.io/posts/observingimaponnode/
     // http://liginc.co.jp/web/service/facebook/153850
 
@@ -26,11 +26,11 @@ describe('rakuten', function () {
     oneTimeKeyPromise = deferred.promise;
 
     var imap = inbox.createConnection(
-      false, 'imap.gmail.com', {
+      false, browser.params.rakuten.imap.server, {
         secureConnection: true,
         auth: {
-          user: browser.params.gmail.id,
-          pass: browser.params.gmail.password
+          user: browser.params.rakuten.imap.id,
+          pass: browser.params.rakuten.imap.password
         }
       }
     );
@@ -81,7 +81,7 @@ describe('rakuten', function () {
     $('[src="/rb/fes/img/common/btn_onetime.gif"]').element(by.xpath('..')).click();
   });
 
-  it('Gmailからワンタイムキーを取得', function () {
+  it('IMAPサーバからワンタイムキーを取得', function () {
     browser.driver.wait(function () {
       return oneTimeKeyPromise;
     }, 60 * 1000, 'ワンタイムキーパスワード記載のメールを1分待つ')

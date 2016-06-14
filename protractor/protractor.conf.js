@@ -42,11 +42,12 @@ exports.config = {
         [/出身地は？/, '(答え)'],
         [/初めて飼ったペットの名前は？/, '(答え)'],
         [/所有している車は？/, '(答え)']
-      ]
-    },
-    gmail: {
-      id: process.env.GMAIL_ID,
-      password: process.env.GMAIL_PASSWORD
+      ],
+      imap: {
+        server: 'imap.gmail.com',
+        id: process.env.RAKUTEN_IMAP_ID,
+        password: process.env.RAKUTEN_IMAP_PASSWORD
+      }
     },
     smbc: {
       account: process.env.SMBC_ACCOUNT,
