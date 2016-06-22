@@ -38,11 +38,17 @@ exports.config = {
     rakuten: {
       id: process.env.RAKUTEN_ID,
       password: process.env.RAKUTEN_PASSWORD,
-      questions: [
-        [/出身地は？/, '(答え)'],
-        [/初めて飼ったペットの名前は？/, '(答え)'],
-        [/所有している車は？/, '(答え)']
-      ],
+      questions: (function () {
+        var questions = [];
+        for (var i = 1; process.env['RAKUTEN_QUESTIONS_' + i]; ++i) {
+          var qa = process.env['RAKUTEN_QUESTIONS_' + i].split(/\t+/);
+          if (qa.length !== 2) {
+            break;
+          }
+          questions.push([new RegExp(qa[0]), qa[1]]);
+        }
+        return questions;
+      })(),
       imap: {
         server: 'imap.gmail.com',
         id: process.env.RAKUTEN_IMAP_ID,
