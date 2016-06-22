@@ -161,8 +161,4 @@ describe('rakuten', function () {
       console.log('wrote: ' + outFilePath);
     });
   });
-
-  it('', function () {
-      browser.pause();
-  });
 });
