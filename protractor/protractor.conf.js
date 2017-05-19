@@ -35,6 +35,26 @@ exports.config = {
       id: process.env.MUFG_ID,
       password: process.env.MUFG_PASSWORD
     },
+    rakuten: {
+      id: process.env.RAKUTEN_ID,
+      password: process.env.RAKUTEN_PASSWORD,
+      questions: (function () {
+        var questions = [];
+        for (var i = 1; process.env['RAKUTEN_QUESTIONS_' + i]; ++i) {
+          var qa = process.env['RAKUTEN_QUESTIONS_' + i].split(/\t+/);
+          if (qa.length !== 2) {
+            break;
+          }
+          questions.push([new RegExp(qa[0]), qa[1]]);
+        }
+        return questions;
+      })(),
+      imap: {
+        server: 'imap.gmail.com',
+        id: process.env.RAKUTEN_IMAP_ID,
+        password: process.env.RAKUTEN_IMAP_PASSWORD
+      }
+    },
     smbc: {
       account: process.env.SMBC_ACCOUNT,
       password: process.env.SMBC_PASSWORD
