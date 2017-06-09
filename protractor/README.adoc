@@ -4,12 +4,38 @@ Scrape websites using http://angular.github.io/protractor/[Protoractor].
 
 	npm install
 	npm run scrape-mufg
+	npm run scrape-rakuten
 
 == MUFG
 
-Scrapes http://direct.bk.mufg.jp/[三菱東京UFJ銀行] and prints current balance and stores last month's details to __YYYY__-__mm__.tsv.
+Scrapes http://direct.bk.mufg.jp/[三菱東京UFJ銀行] and prints current balance and stores last month's details to mufg-__YYYY__-__mm__.tsv.
 
 Required environment variables:
 
 * `MUFG_ID`
 * `MUFG_PASSWORD`
+
+== Rakuten
+
+Scrapes https://www.rakuten-bank.co.jp/[楽天銀行] and prints current balance and stores last month's details to rakuten-__YYYY__-__mm__.tsv.
+
+Required environment variables:
+
+* `RAKUTEN_ID`
+* `RAKUTEN_PASSWORD`
+* `RAKUTEN_IMAP_ID`
+** Gmail IMAP account
+* `RAKUTEN_IMAP_PASSWORD`
+** Gmail IMAP password
+
+* `RAKUTEN_QUESTIONS_{no}`
+** Questions and answers which are displayed when logging in rakuten bank
+** Separated by tab (\\t) character
+
+=== Example
+
+----
+export RAKUTEN_QUESTIONS_1='出身地は？(tab)...'
+export RAKUTEN_QUESTIONS_2='初めて飼ったペットの名前は？(tab)...'
+export RAKUTEN_QUESTIONS_3='所有している車は？(tab)...'
+----
